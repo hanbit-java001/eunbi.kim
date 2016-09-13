@@ -12,7 +12,6 @@ public class SimpleApplication {
 		schedule.setTitle("저녁");
 		schedule.setMemo("반찬 뭘까");
 		schedule.setStartDt("201609131830");
-
 		schedule.setEndDt("201609131930");
 
 		int result = schedulerService.addSchedule(schedule);
