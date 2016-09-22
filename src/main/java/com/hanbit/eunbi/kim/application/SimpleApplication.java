@@ -4,6 +4,7 @@ import com.hanbit.eunbi.kim.core.service.SchedulerService;
 import com.hanbit.eunbi.kim.core.vo.ScheduleVO;
 
 public class SimpleApplication {
+
 	public static void main(String[] args) {
 		SchedulerService schedulerService = new SchedulerService();
 
@@ -16,6 +17,7 @@ public class SimpleApplication {
 
 		int result = schedulerService.addSchedule(schedule);
 
-		System.out.println("결과 : " + result);
+		System.out.println("결과: " + result);
 	}
+
 }

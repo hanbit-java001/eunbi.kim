@@ -1,11 +1,10 @@
 package com.hanbit.eunbi.kim.application;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.Log4jConfigurer;
 
+import com.hanbit.eunbi.kim.core.dao.MybatisExampleDAO;
 import com.hanbit.eunbi.kim.core.service.SchedulerService;
 import com.hanbit.eunbi.kim.core.vo.ScheduleVO;
 
@@ -23,10 +22,10 @@ public class SpringApplication {
 
 			ScheduleVO schedule = new ScheduleVO();
 			schedule.setScheduleId(String.valueOf(System.currentTimeMillis()));
-			schedule.setTitle("안뇽");
-			schedule.setMemo("집에가고싶다");
-			schedule.setStartDt("201609151830");
-			schedule.setEndDt("201609201930");
+			schedule.setTitle("저녁식사");
+			schedule.setMemo("반찬 뭘까");
+			schedule.setStartDt("201609191830");
+			schedule.setEndDt("201609191930");
 
 			int result = schedulerService.addSchedule(schedule);
 		}
