@@ -44,7 +44,11 @@ public class ScheduleController {
 	@ResponseBody
 	public ScheduleVO addSchedule(@RequestBody ScheduleVO schedule) {
 
-		LOGGER.debug(schedule.getTitle());
+		String scheduleId = String.valueOf(System.currentTimeMillis());
+
+		schedule.setScheduleId(scheduleId);
+
+		schedulerService.addSchedule(schedule);
 
 		return schedule;
 	}
