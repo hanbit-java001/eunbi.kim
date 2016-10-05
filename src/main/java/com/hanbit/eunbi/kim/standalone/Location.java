@@ -1,6 +1,7 @@
 package com.hanbit.eunbi.kim.standalone;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
+import com.hanbit.eunbi.kim.standalone.Location;
+import com.hanbit.eunbi.kim.standalone.School;
 
 public class Location {
 	public static final String HOSPITAL = "병원";

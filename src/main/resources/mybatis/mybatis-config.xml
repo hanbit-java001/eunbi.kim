@@ -7,4 +7,10 @@
 		<setting name="mapUnderscoreToCamelCase" value="true" />
 	</settings>
 
+	<typeAliases>
+		<typeAlias type="com.hanbit.eunbi.kim.core.vo.ScheduleVO" alias="ScheduleVO" />
+		<typeAlias type="com.hanbit.eunbi.kim.core.vo.MemberVO" alias="MemberVO" />
+		<typeAlias type="com.hanbit.eunbi.kim.core.vo.FileVO" alias="FileVO" />
+	</typeAliases>
+
 </configuration>

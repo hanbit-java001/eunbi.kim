@@ -1,0 +1,36 @@
+#btnGroupUpdateSchedule {
+	display: none;
+}
+
+#divAddSchedule .form-control[readonly] {
+	background-color: white;
+}
+
+.hanbit-schedule-detail {
+	width: 100%;
+}
+
+.hanbit-schedule-detail .column-title {
+	width: 20%;
+	min-width: 80px;
+	max-width: 150px;
+}
+
+.hanbit-schedule-detail .column-value {
+	width: 80%;
+}
+
+.fc-list-item-title {
+	position: relative;
+}
+
+.fc-list-item-title .delete-schedule {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	transform: translateY(-50%);
+}
+
+.fc-event, .fc-list-item-title {
+	cursor: pointer;
+}

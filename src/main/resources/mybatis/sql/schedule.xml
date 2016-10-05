@@ -3,14 +3,14 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="schedule">
 
-	<insert id="insertSchedule" parameterType="com.hanbit.eunbi.kim.core.vo.ScheduleVO">
+	<insert id="insertSchedule" parameterType="ScheduleVO">
 		INSERT INTO SCHEDULE
 			(SCHEDULE_ID, TITLE, MEMO, START_DT, END_DT)
 		VALUES
 			(#{scheduleId}, #{title}, #{memo}, #{startDt}, #{endDt})
 	</insert>
 
-	<update id="updateSchedule" parameterType="com.hanbit.eunbi.kim.core.vo.ScheduleVO">
+	<update id="updateSchedule" parameterType="ScheduleVO">
 		UPDATE SCHEDULE SET
 			TITLE = #{title}, MEMO = #{memo},
 			START_DT = #{startDt}, END_DT = #{endDt}
@@ -21,19 +21,27 @@
 		DELETE FROM SCHEDULE WHERE SCHEDULE_ID = #{scheduleId}
 	</delete>
 
-	<select id="selectSchedules" parameterType="map" resultType="com.hanbit.eunbi.kim.core.vo.ScheduleVO">
+	<select id="selectSchedules" parameterType="map" resultType="ScheduleVO">
 	<![CDATA[
-		SELECT SCHEDULE_ID, TITLE, MEMO, START_DT, END_DT
+		SELECT SCHEDULE_ID, TITLE, START_DT, END_DT
 		FROM SCHEDULE
 		WHERE START_DT <= #{endDt} AND END_DT >= #{startDt}
 		ORDER BY START_DT
 	]]>
 	</select>
 
-	<select id="selectSchedule" parameterType="string" resultType="com.hanbit.eunbi.kim.core.vo.ScheduleVO">
+	<select id="selectSchedule" parameterType="string" resultType="ScheduleVO">
 		SELECT SCHEDULE_ID, TITLE, MEMO, START_DT, END_DT
 		FROM SCHEDULE
 		WHERE SCHEDULE_ID = #{scheduleId}
+	</select>
+
+	<select id="countSchedule" parameterType="map" resultType="int">
+	<![CDATA[
+		SELECT COUNT(SCHEDULE_ID)
+		FROM SCHEDULE
+		WHERE START_DT <= #{endDt} AND END_DT >= #{startDt}
+	]]>
 	</select>
 
 </mapper>
